@@ -13,4 +13,14 @@ class PhotosController< ApplicationController
     #look in the "id" column for the variable "url_id"; go back and look up "url_id"
     render ({ :template => "photo_templates/show"})
   end
+
+def delete
+  #Parameters: {"path_id"=>"785"}
+  the_id = params.fetch("path_id")
+  matching_photos = Photo.where({ :id => the_id})
+  the_photo = matching_photos.at(0)
+  the_photo.destroy
+  #render ({ :template => "photo_templates/delete.html.erb"})
+  redirect_to("/photos")
+end
 end
