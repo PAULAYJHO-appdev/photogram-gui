@@ -42,4 +42,9 @@ def create
 
   redirect_to("/photos/" + a_new_photo.id.to_s)
 end
+
+def update
+#Parameters: {"query_image"=>"https://bradaronson.com/wp-content/uploads/2013/10/happy.jpg", "query_caption"=>"https://bradaronson.com/wp-content/uploads/2013/10/happy.jpg", "modify_id"=>"951"}
+  render({ :template => "photo_templates/update.html.erb"})
+end
 end
