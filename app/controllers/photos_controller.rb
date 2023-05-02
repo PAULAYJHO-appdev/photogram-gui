@@ -23,4 +23,8 @@ def delete
   #render ({ :template => "photo_templates/delete.html.erb"})
   redirect_to("/photos")
 end
+
+def create
+  render({ :template => "photo_templates/create.html.erb"})
+end
 end
